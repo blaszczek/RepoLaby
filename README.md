@@ -10,3 +10,5 @@
   * [ ] [zadanie 4](lab01/zad04.c)
   * [ ] [zadanie 5](lab01/zad05.c)
   * [ ] [zadanie 6](lab01/zad06.c)
+2. [Laboratorium 2](Lab2)
+  *[X] [zadanie 1](Lab2/zad1.c)

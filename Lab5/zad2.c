@@ -16,7 +16,7 @@ typedef struct {
 osoba spis[IL_OSOB];
 
 //=======================================================
-
+//sososos
 void  utworz_spis(void) {
   FILE* baza =
     fopen("mBaza","r");

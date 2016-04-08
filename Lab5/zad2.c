@@ -17,9 +17,7 @@ osoba spis[IL_OSOB];
 //=======================================================
 
 void  utworz_spis(void) {
-  FILE* baza =
-    fopen("/home/pracinf/stefan/public_html/Dydaktyka/JezProg/Slajdy/Labs05/baza_danych",
-  "r");
+  FILE* baza =fopen("/home/pracinf/stefan/public_html/Dydaktyka/JezProg/Slajdy/Labs05/baza_danych","r");
   if (baza == NULL) printf("\n ZLE\n\n");
   for (int i=0; i<IL_OSOB; i++) {
     fscanf(baza, "%s", spis[i].imie);
@@ -35,9 +33,35 @@ void  sortuj_spis(void) {
   /* sortuje  spis  alfabetycznie wg nazwisk,
      a w przypadku rownych nazwisk wg imion
   */
-
+  int i, j;
+  char pom[NAZW_MAX+1];
+  for(i=1;i<=IL_OSOB;i++)
+  {
+    for(j=i;j<IL_OSOB;j++)
+    {
+      if(strcmp(spis[j-1].nazwisko, spis[j].nazwisko)>0)
+      {
+        strcpy(pom, spis[j-1].nazwisko);
+        strcpy(spis[j-1].nazwisko, spis[j].nazwisko);
+        strcpy(spis[j].nazwisko, pom);
+      }
+      else if(strcmp(spis[j-1].nazwisko,spis[j].nazwisko)==0)
+      {
+        strcpy(pom,spis[j-1].imie);
+        strcpy(spis[j-1].imie, spis[j].imie);
+        strcpy(spis[j].imie, pom);
+      }
+    }
+  }
+  FILE* baza2=fopen("posortowane.txt","w");
+  for(i=0;i<IL_OSOB;i++)
+  {
+    fprintf(baza2, "%s	", spis[i].imie);
+    fprintf(baza2, "%s	", spis[i].nazwisko);
+    fprintf(baza2, "%i\n", spis[i].pensja);
+  }
+  fclose(baza2);
 }
-
 //=======================================================
 
 int  znajdz_nazwisko (
@@ -48,7 +72,14 @@ int  znajdz_nazwisko (
      imie  im  oraz pensje  p
      jesli znajdzie, to zwraca 1, jesli nie, to 0
   */
-
+       int i=0;
+       while(i<IL_OSOB && strcmp(na, spis[i].nazwisko) != 0)
+         i++;
+       if(i == IL_OSOB) return 0;
+       else if(strcmp(na, spis[i].nazwisko)==0)
+         strcpy(im, spis[i].imie);
+       *p = spis[i].pensja;
+       return 1;
 }
 
 //=======================================================
@@ -61,7 +92,17 @@ int  znajdz_imie (
      nazwisko  na  oraz pensje  p
      jesli znajdzie, to zwraca 1, jesli nie, to 0
   */
+  int i;
+  for(i=0; i<IL_OSOB; i++)
+  {
+    if(strcmp(spis[i].imie,im) == 0){
+      strcpy(na,spis[i].nazwisko);
+      *p = spis[i].pensja;
+      return 1;
+    }
+  }
 
+return 0;
 }
 
 //=======================================================

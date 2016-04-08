@@ -7,6 +7,7 @@ int main()
 	while (z!=EOF);
 	{
 		printf("%c", z);
+		printf("%c", z);
 	z = getchar();
 	}
 	return 0;

@@ -17,8 +17,8 @@ osoba spis[IL_OSOB];
 
 //=======================================================
 
-void utworz_spis(void) {
-  FILE* baza =fopen("baza.txt","r");
+void utworz_spis(char *czytaj) {
+  FILE* baza =fopen(czytaj,"r");
   if (baza == NULL) printf("\n ZLE\n\n");
   for (int i=0; i<IL_OSOB; i++) {
     fscanf(baza, "%s", spis[i].imie);
@@ -41,11 +41,11 @@ int compare(const void * _s1, const void * _s2){
   return strcmp(s1-> nazwisko, s2-> nazwisko);
 }
 
-void  sortuj_spis(void) {
+void  sortuj_spis(char *niew) {
   /* sortuje  spis  alfabetycznie wg nazwisk,
      a w przypadku rownych nazwisk wg imion
   */
-  FILE* baza2 =fopen("posortowane.txt", "w");
+  FILE* baza2 =fopen(niew, "w");
   qsort(spis, IL_OSOB, sizeof(osoba), compare);
     int i;
     for (i = 0; i < IL_OSOB; i++) {
@@ -101,7 +101,7 @@ int main (int argc, char *argv[]) {
   char odpowiedz, im[NAZW_MAX+1], na[IMIE_MAX+1];
   int p;
 
-  utworz_spis(); sortuj_spis();
+  utworz_spis(argv[1]); sortuj_spis(argv[2]);
 
   do {
     printf(

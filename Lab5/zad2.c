@@ -16,10 +16,10 @@ typedef struct {
 osoba spis[IL_OSOB];
 
 //=======================================================
-//sososos
-void  utworz_spis(void) {
+
+void  utworz_spis(char *nazwa) {
   FILE* baza =
-    fopen("mBaza","r");
+    fopen(nazwa,"r");
   if (baza == NULL) printf("\n ZLE\n\n");
   for (int i=0; i<IL_OSOB; i++) {
     fscanf(baza, "%s", spis[i].imie);
@@ -51,14 +51,15 @@ int compare(const void *s1, const void *s2, void *arg)
       default:
       break;
     }
+    return 2;
 }
-// powyzsza funkcja generuje ostrzerzenie -Wreturn-type
+// powyzsza funkcja generuje bez instrukcji return 2; ostrzerzenie -Wreturn-type
 //=======================================================
 
 
 void  sortuj_spis() {
   int opcja;
-  printf("Jak chcesz posortować spis? : \n");
+  printf("Jak chcesz posortować spis? (1) nazwisko, (2) imie, (3) pensja : \n");
   scanf("%d",&opcja);
   qsort_r ( spis, IL_OSOB, sizeof(osoba), compare, &opcja);
 }
@@ -82,7 +83,7 @@ void spis_do_pliku() {
 //=======================================================
 int  znajdz_nazwisko (char *na, char *im, int *p)
 {
-
+  // bsearch (&na, spis.nazwisko, sizeof(spis.nazwisko),  )
 	for(int i = 0; i < IL_OSOB; ++i){
 		if(strcmp( spis[i].nazwisko, na) == 0){
 		strcpy( im, spis[i].imie );
@@ -110,11 +111,10 @@ int  znajdz_imie (char *im, char *na, int *p)
 
 //=======================================================
 
-int main () {
+int main (int argc, char *argv[]) {
   char odpowiedz, im[NAZW_MAX+1], na[IMIE_MAX+1];
   int p;
-
-  utworz_spis(); sortuj_spis();spis_do_pliku();
+  utworz_spis(argv[1]); sortuj_spis();spis_do_pliku();
 
   do {
     printf(
@@ -145,4 +145,5 @@ int main () {
   }  while (tolower(odpowiedz) != 'q');
 
   printf("\n DZIEKUJE.\n\n");
+
 }

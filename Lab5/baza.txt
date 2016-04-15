@@ -1,6 +1,7 @@
-Rafał Błaszkiewicz 6000
-Dominik Wysocki 1200
-Janusz Januszowy 4000
-Andrzej Duda 5000
-Maciej Marnic 3200
-Jan Kowalski 2134
+Jan	       Kowalski	           2134
+   Janusz	      Januszowy	           4000   
+        Maciej	         Marnic	           3200
+        Dominik	        Wysocki	           1200
+        Andrzej	           Duda	           5000           
+       Maciej	   Andrzejewicz	           6599
+         Rafał	  Błaszkiewicz	           6000

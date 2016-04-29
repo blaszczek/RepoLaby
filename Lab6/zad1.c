@@ -12,7 +12,7 @@ typedef struct sl {
 //=======================================================
 
 int pusta(lista lis) {
-  // jesli  lis  jest lista pusta (wskaznik  NULL)
+  // jesli  dlis  jest lista pusta (wskaznik  NULL)
   // to wartoscia jest liczba rozna od 0, w przeciwnym razie 0
     if(lis=NULL) return 1;
     else return 0;

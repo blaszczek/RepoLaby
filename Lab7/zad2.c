@@ -3,9 +3,9 @@
 #include <ctype.h>
 #include <stdlib.h>
 #include <time.h>
-#define IMIE_MAX 20
-#define NAZW_MAX 20
-#define IL_OSOB 10000
+#define IMIE_MAX 11
+#define NAZW_MAX 17
+#define IL_OSOB 1000
 typedef struct
 {
   char imie[IMIE_MAX+1];
@@ -17,7 +17,7 @@ osoba spis[IL_OSOB];
 void utworz_spis(char *name, int *linie)
 {
   FILE *baza = fopen(name, "r");
-  if(baza == NULL) printf("\nCOS SIE ZEPSULO!\n\n");
+  if(baza == NULL) printf("\nBlad!\n\n");
   int i;
   for(i = 0; i < *linie; i++)
   {
@@ -126,6 +126,6 @@ int main(int args, char* arg[])
     return 0;
   } else printf("\nNiepoprawne wywolanie programu!\n");
   printf("Wywolanie programu wymaga argumentu!\n");
-  printf("./zad2b nazwapliku(lub lokalizacja pliku)!\n");
+  printf("./zad2 nazwapliku(lub lokalizacja pliku)!\n");
   return 0;
 }

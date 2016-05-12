@@ -1,13 +1,29 @@
-#include<stdio.h>
+#include <stdio.h>
+void dec_bin(int x)
+{
+  int tab[10];
+  int l=0;
+  while(x!=0)
+  {
+    tab[l]=x%2;
+    x=x/2;
+    l++;
+  }
+  while(l>0)
+  {
+    l--;
+    printf("%i", tab[l]);
+  }
+  printf("\n");
+}
 int main()
 {
-signed int a, b, c, d, e, f
-a=5&3;
-b=5|3;
-c=7<<2&7;
-d=7<<(2&7);
-e=((-1)<<8)>>16;
-f=13^9;
-printf("%d, %d, %d, %d, %d, %d", a, b, c, d, e, f);
-return 0;
+  char z;
+  z=getchar();
+  while(z!=EOF)
+  {
+    if(z!='\n') dec_bin(z);
+    z=getchar();
+  }
+  return 0;
 }

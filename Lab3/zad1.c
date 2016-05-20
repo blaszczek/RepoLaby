@@ -12,5 +12,5 @@ int main()
   printf("|%11s| %7li| %20e| %20e| %e| %9d|\n", "float", sizeof(float), (float)FLT_MIN, (float)FLT_MAX, FLT_EPSILON, (int)FLT_DIG);
   printf("|%11s| %7li| %20le| %20le| %e| %9d|\n", "double", sizeof(double), (double)DBL_MIN, (double)DBL_MAX, DBL_EPSILON, (int)DBL_DIG);
   printf("|%11s| %7li| %20Le| %20Le| %Le| %9d|\n", "long double", sizeof(long double), (long double)LDBL_MIN, (long double)LDBL_MAX, LDBL_EPSILON, (int)LDBL_DIG);
-  return 0;
+ 
 }

@@ -31,5 +31,5 @@ int main()
 	z=(x%3)+(x%4);
 	printf("%d, %d, %d\n", x, y, z);
 
-	return 0;
+	
 }

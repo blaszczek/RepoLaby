@@ -35,5 +35,5 @@ int main()
     printf("%i. %Lf => %Le\n", l, x2, x2);
     l++;
   }
-  return 0;
+
 }

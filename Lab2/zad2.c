@@ -37,5 +37,5 @@ int main()
   int x;
   scanf("%i", &x);
   date(x);
-  return 0;
+ 
 }

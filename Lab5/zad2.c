@@ -71,7 +71,7 @@ int  znajdz_nazwisko (char na[NAZW_MAX+1],char im[IMIE_MAX+1], int *p) {
       return 1;
     }
   }
-  return 0;
+  
 }
 
 
@@ -92,7 +92,7 @@ int  znajdz_imie (char im[NAZW_MAX+1], char na[IMIE_MAX+1], int *p) {
     }
   }
 
-return 0;
+
 }
 
 //=======================================================
@@ -132,5 +132,5 @@ int main (int argc, char *argv[]) {
   }  while (tolower(odpowiedz) != 'q');
 
   printf("\n DZIEKUJE.\n\n");
-  return 0;
+  
 }

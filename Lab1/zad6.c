@@ -14,5 +14,5 @@ int main()
   i=1;
   while((i*=2)<N);
   printf("\nD. %d\n", i);
-  return 0;
+ 
 }

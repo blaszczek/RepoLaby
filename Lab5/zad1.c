@@ -14,5 +14,5 @@ printf("podaj p\n");
 scanf("%d", &p);
 funkcja(o, p, &iloraz, &reszta);
 printf("%d, %d", o, p);
-return 0;
+
 }

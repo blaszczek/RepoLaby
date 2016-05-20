@@ -10,5 +10,5 @@ int main()
 		printf("%c", z);
 	z = getchar();
 	}
-	return 0;
+
 }

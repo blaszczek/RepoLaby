@@ -26,5 +26,5 @@ int main()
   //wypisuje maksymalna wartosc longa(float > long)
   printf("INT_MAX -> (float)INT_MAX:\n%i -> %e\n\n", INT_MAX, (float)INT_MAX);
   //wypisuje maksymalna wartosc inta (float > int)
-  return 0;
+ 
 }

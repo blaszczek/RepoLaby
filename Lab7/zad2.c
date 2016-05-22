@@ -123,9 +123,9 @@ int main(int args, char* arg[])
     clock_t end2 = clock();
     printf("\nCzas wykonania bubble: %lf sek.\n\n", (double)(end2-begin2)/CLOCKS_PER_SEC);
     printf("\nPosortowane!\n\n");
-    return 0;
+    
   } else printf("\nNiepoprawne wywolanie programu!\n");
   printf("Wywolanie programu wymaga argumentu!\n");
   printf("./zad2 nazwapliku(lub lokalizacja pliku)!\n");
-  return 0;
+ 
 }

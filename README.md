@@ -13,7 +13,8 @@
 |     double|       8|        2.225074e-308|        1.797693e+308| 2.220446e-16|        15|
 |long double|      16|       3.362103e-4932|       1.189731e+4932| 1.084202e-19|        18|
 Dodatkowe zadanie
-[Dodatkowe](dodatkowe)[zadanie dodatkowe](dodatkowe/zad1.c)
+[Dodatkowe] (dodatkowe) [zadanie dodatkowe] (dodatkowe/zad1.c)
+
 1. [Laboratorium 1](Lab1)
   * [X] [zadanie 1](Lab1/zad1.c)
   * [X] [zadanie 2](Lab1/zad2.c)

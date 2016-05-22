@@ -6,5 +6,5 @@ int main()
   PETLA(a++, i<5, b++; i++);
   printf("%i\n", a);
   printf("%i\n", b);
-  return 0;
+  
 }
